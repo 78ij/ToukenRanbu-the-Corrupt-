@@ -12,9 +12,31 @@
 @trans method = crossfade time = 1000
 @wt
 
+@position layer=message4 visible = true 
+@current layer=message4
+@locate x = 91 y = 72
+@button normal = "menu"
+@locate x=112 y = 37
+@button graphic="save"
+@iscript
+var isopen = false;
+fml(4,0).object.onClick = function(){
+	if(!isopen){
+		clib();
+		ib(kag.fore.messages[4],300,255,760,0);
+		isopen = true;
+	}
+	else{
+		clib();
+		ib(kag.fore.messages[4],300,255,760,-72);
+		isopen = false;
+	}
+};
+@endscript
 @layopt layer=message0 opacity = 255
 @current layer=message0
 
+;Script begin.
 @n
 狐之助
 @nn
@@ -27,7 +49,7 @@
 狐之助
 @nn
 「考虑到这座本丸在对时间溯行军的战斗中做出过卓越贡献，政府决定若是审神者能在一个月内将暗堕者交出便不对这座本丸进行肃清。」[lr]
-@n 
+@n
 狐之助
 @nn
 「以上是政府交付我要传达的指令，请问审神者大人您还有什么疑问吗？」[lr]

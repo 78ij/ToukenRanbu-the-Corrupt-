@@ -15,7 +15,7 @@ class ButtonInterpolate{
 	
 	var dn = 0;
 	var pfin = false;
-	var ofin = false;
+	var ofin = false; //whether interpolation of opacity and position are finished
 	var sop; // source opacity
 	var dop; // destination opacity
 	var spx;
@@ -32,7 +32,7 @@ class ButtonInterpolate{
 	var y;
 	
 	function ButtonInterpolate(ml,time,op,px,py){
-		obj = ml.object;
+		obj = ml;
 		sop = obj.opacity;
 		t = time;
 		dop = op !== void ? op : 255;
@@ -51,6 +51,10 @@ class ButtonInterpolate{
 	
 	function start(){
 		interpT.enabled = 1;
+	}
+	
+	function stop(){
+		
 	}
 	function action(){
 		if(obj === void){
@@ -87,7 +91,6 @@ class ButtonInterpolate{
 	function finalize(){
 		interpT.enabled = 0;
 		invalidate interpT;
-		invalidate obj;
 	}
 	
 }

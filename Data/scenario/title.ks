@@ -37,25 +37,25 @@
 @locate x = 430 y = 200
 @button graphic = "t1_start" hint = "开始游戏。"  target = *start
 @eval exp = "fml(1,0).object.opacity = 0" 
-@eval exp= "ib(fml(1,0),700,255,430,200)"
+@eval exp= "ib(fml(1,0).object,700,255,430,200)"
 @wait time=200
 
 @locate x = 430 y = 260
 @button graphic = "t1_load" hint ="读取存档。"
 @eval exp = "fml(1,1).object.opacity = 0" 
-@eval exp= "ib(fml(1,1),700,255,430,260)"
+@eval exp= "ib(fml(1,1).object,700,255,430,260)"
 @wait time=200
 
 @locate x = 430 y = 320
 @button graphic = "t1_extra" hint = "原画鉴赏。"
 @eval exp = "fml(1,2).object.opacity = 0" 
-@eval exp= "ib(fml(1,2),700,255,430,320)"
+@eval exp= "ib(fml(1,2).object,700,255,430,320)"
 @wait time=200
 
 @locate x = 430 y = 380
 @button graphic = "t1_exit" hint = "结束游戏。" exp="kag.close()"
 @eval exp = "fml(1,3).object.opacity = 0" 
-@eval exp= "ib(fml(1,3),700,255,430,380)"
+@eval exp= "ib(fml(1,3).object,700,255,430,380)"
 @s
 
 *start

@@ -1,0 +1,129 @@
+
+class LMouseLayer extends KAGLayer{
+	function LMouseLayer(win,par){
+		super.KAGLayer(win,par);
+		focusable = false;
+	}
+	
+	function onMouseDown(x,y,button){
+		parent.sliderLayer.onMouseDown(x,y + top,button);
+	}
+	
+	function onMouseUp(x,y,button){
+		parent.sliderLayer.onMouseUp(x,y + top,button);
+	}
+	
+	function onMouseMove(x,y){
+		parent.sliderLayer.onMouseMove(x,y + top);
+	}
+}
+
+
+class SliderLayerEx extends Layer{
+
+	var tablayer;
+	var value = 19;
+	var max;
+	var pagelines = 19;
+	var dragging = false;
+	var yorig;
+	var yorig2;
+	
+	function abs(a){
+	return a < 0? -a : a;
+	}
+	
+	function SliderLayerEx(win,par){
+ 		super.Layer(win,par);
+		focusable = true;
+		hitType = htMask;
+		hitThreshold = 0;
+		this.loadImages("slbg");
+	}
+	
+	property TabLayer{
+		getter(){
+			if(tablayer == void){
+				tablayer = new LMouseLayer(this.window,this.parent);
+				tablayer.visible = true;
+				tablayer.absolute = 6000000;
+			}
+			return tablayer;
+		}
+	}
+
+	
+	function up(){
+		if(value < max)
+			value++;
+	}
+	
+	function down(){
+		if(value > pagelines){
+			value--;
+		}
+	}
+	function updtabpos(){
+		var delta = this.height - tablayer.height;
+		var datadel = value - pagelines;
+		var total = max - pagelines;
+		dm(value);
+		dm(total);
+		var delta2 = (datadel / total) * delta;
+		tablayer.setPos(940,540 - tablayer.height - delta2);
+	}
+	
+	function onMouseDown(x,y,button){
+		focus();
+		//super.onMouseDown(...);
+		dm(y);
+		if(button == mbLeft){
+			if(y < tablayer.top){
+				parent.scrollDown();
+			}
+			else if(y > (tablayer.top + tablayer.height)){
+				parent.scrollUp();
+			}
+			else{
+				dm("aa");
+				dragging = true;
+				yorig = yorig2 = y;
+			}
+
+		}
+	}
+	
+	function onMouseMove(x,y){
+		if(dragging){
+			var deltay = y - yorig;
+			var yinter = (540 - tablayer.height) / (max - pagelines);
+			if(abs(deltay) >= yinter){
+				var n = int (abs(deltay) / yinter);
+				var errta = (abs(deltay) / yinter) - n;
+				dm(errta);
+				yorig = y;
+				if(deltay < 0){
+					for(var i = 0;i < n;i++)
+						parent.scrollDown();
+					if(value < max)
+						tablayer.setPos(940,tablayer.top - errta * yinter);
+				}
+				else if(deltay > 0){
+					for(var i = 0;i < n;i++)
+						parent.scrollUp();
+					if(value > pagelines)
+						tablayer.setPos(940,tablayer.top + errta * yinter);
+				}
+			}
+		}
+	}
+	
+	function onMouseUp(x,y,button){
+		if(button == mbLeft && dragging){
+			dragging = false;
+		}
+	}
+	function OnPaint(){
+		super.onPaint(...);
+		}
+}

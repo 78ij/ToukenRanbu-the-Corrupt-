@@ -1,0 +1,93 @@
+//Interpolate buttons.
+//can interpolate position and opacity.
+//Created by 78ij in 2018.2
+//Some code are from ´ºÅ¯»¨é_2013.
+
+function abs(a){
+	return a < 0? -a : a;
+}
+
+
+class ButtonInterpolate{
+
+	var interpT = new Timer(action,'');
+	interpT.interval = 16;
+	
+	var dn = 0;
+	var pfin = false;
+	var ofin = false;
+	var sop; // source opacity
+	var dop; // destination opacity
+	var spx;
+	var spy; // source position
+	var dpx;  
+	var dpy; // destination position
+	var dx;
+	var dy;
+	var deo;  // delta x,y,opacity
+	var n;   // the number of the action
+	var t;   // the time of the transformation
+	var obj; // the button
+	var x;
+	var y;
+	
+	function ButtonInterpolate(ml,time,op,px,py){
+		obj = ml.object;
+		sop = obj.opacity;
+		t = time;
+		dop = op !== void ? op : 255;
+		spx = obj.left;
+		spy = obj.top;
+		dpx = px;
+		dpy = py;
+		n = t / 16;
+		dx = (dpx - spx) / n;
+		dy = (dpy - spy) / n;
+		deo = (dop - sop) / n;
+		dm(dx);
+		x = obj.left;
+		y = obj.top;
+	}
+	
+	function start(){
+		interpT.enabled = 1;
+	}
+	function action(){
+		if(obj === void){
+			dm("aaaaa");
+		}
+		x += dx;
+		y += dy;
+		var op = obj.opacity + deo;
+		if(abs(x - dpx) < 1 && abs(y - dpy) < 1){
+			obj.setPos(dpx,dpy);
+			pfin = true;
+		}
+		else{
+			if(!pfin){
+				obj.setPos(x,y);
+			}
+		}
+		if(abs(op - dop) < 1){
+			obj.opacity = dop;
+			ofin = true;
+		}
+		else{
+			if(!(ofin == true))
+				obj.opacity = op;
+		}
+		dn++;
+		if(dn >=n){
+			obj.setPos(dpx,dpy);
+			obj.opacity = dop;
+			interpT.enabled = 0;
+		}
+	}
+	
+	function finalize(){
+		interpT.enabled = 0;
+		invalidate interpT;
+		invalidate obj;
+	}
+	
+}

@@ -1,0 +1,121 @@
+
+class SaveLoadButtonLayer extends Layer{
+
+	var issaving;
+	var archiveno;   // -1: no save file
+	var saveloadbutton;
+	var deletebutton;
+	var note;
+	var bookmarkgra;
+	var mouseon;
+	
+	function SaveLoadButtonLayer(win,par){
+		super.Layer(win,par);
+		visible = true;
+		mouseon = false;
+		focusable = true;
+		hitType = htMask;
+		hitThreshold = 0;
+	}
+	function show(_archiveno,_issaving,left,top){
+		saveloadbutton = new ButtonLayer(kag,this);
+		deletebutton = new ButtonLayer(kag,this);
+		deletebutton.onClick = function(){
+			parent.deletear();
+		};
+		saveloadbutton.onClick = function(){
+			parent.onClick();
+		};
+		bookmarkgra = new KAGLayer(kag,this);
+		issaving = _issaving;
+		archiveno = _archiveno;
+		if(issaving)
+			saveloadbutton.loadImages("savebut");
+		else
+			saveloadbutton.loadImages("loadbut");
+		deletebutton.loadImages("delete");
+		saveloadbutton.setPos(272,106);
+		deletebutton.setPos(167,106);
+		if(kag.bookMarkDates[archiveno] != void){
+			bookmarkgra.loadImages(&kag.getBookMarkFileNameAtNum(archiveno));
+		}
+		else{
+			dm("asaaa");
+			bookmarkgra.loadImages("nodata");
+		}
+		bookmarkgra.setPos(10,15);
+		this.setPos(left,top);
+		this.loadImages("savebut1");
+		this.setSizeToImageSize();
+		//deletebutton.setSizeToImageSize();
+		//deletebutton.width = 94;
+		//saveloadbutton.setSizeToImageSize();
+		//saveloadbutton.width = 94;
+		bookmarkgra.setSizeToImageSize();
+		this.visible = true;
+		saveloadbutton.visible = true;
+		deletebutton.visible = true;
+		bookmarkgra.visible = true;
+		this.face = dfAlpha;
+		this.font.face = "黑体";
+		this.font.height = 26;
+		this.drawText(172,18,&kag.bookMarkNames[archiveno],0xFFFFFF);
+		this.font.height = 20;
+		this.drawText(172,72,&kag.bookMarkDates[archiveno],0xFFFFFF);
+	}
+	function update(){
+		if(mouseon)
+			loadImages("savebut2");
+		else
+			loadImages("savebut1");
+		this.font.height = 26;
+		this.drawText(172,18,&kag.bookMarkNames[archiveno],0xFFFFFF);
+		this.font.height = 20;
+		this.drawText(172,72,&kag.bookMarkDates[archiveno],0xFFFFFF);
+	}
+	function onMouseEnter(){
+		mouseon = true;
+		saveloadbutton.onMouseEnter();
+		update();
+	}
+	
+	function onMouseLeave(){
+		mouseon = false;
+		saveloadbutton.onMouseLeave();
+		update();
+	}
+	
+	function deletear(){
+		if(kag.bookMarkDates[archiveno] != void)
+			askYesNo("是否删除存档？","确认",kag.eraseBookMark(archiveno));
+		show(archiveno,issaving,left,top);
+	}
+	
+	function onMouseDown(x,y,button,shift){
+		saveloadbutton.onMouseDown(x,y,button,shift);
+	}
+	
+	function onMouseUp(x,y,button,shift){
+		saveloadbutton.onMouseUp(x,y,button,shift);
+	}
+	
+	function onClick(x,y){
+		focus();
+		if(issaving == false){
+			if(kag.bookMarkDates[archiveno] != void){
+				kag.loadBookMarkWithAsk(archiveno);
+			}
+		}	
+		else{
+			kag.saveBookMarkWithAsk(archiveno);
+		}
+		show(archiveno,issaving,left,top);
+	}
+	
+
+	
+	
+	function onPaint(){
+		super.onPaint(...);
+	}
+}

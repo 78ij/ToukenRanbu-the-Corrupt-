@@ -33,7 +33,7 @@
 
 
 @current layer = message1
-@menul
+@menul layer=message1
 @locate x = 430 y = 200
 @button graphic = "t1_start" hint = "¿ªÊ¼ÓÎÏ·¡£"  target = *start
 @eval exp = "fml(1,0).object.opacity = 0" 

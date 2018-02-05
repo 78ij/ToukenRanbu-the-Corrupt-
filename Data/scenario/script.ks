@@ -17,7 +17,7 @@
 @locate x = 0 y = 0
 @button normal = "menu"
 @locate x= 108 y = 28
-@button graphic="save"
+@button graphic="save" storage = "save.ks" target= *save
 @locate x = 108 y = 77
 @button graphic="quicksave"
 @locate x= 108 y = 126

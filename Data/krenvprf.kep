@@ -5,11 +5,11 @@ stayontop=0
 
 [console]
 autoshowonerror=0
-left=551
-top=252
+left=508
+top=474
 width=720
-height=382
-exprhist=ss@-@*var a@-@*var a = 1@-@*a = 1@-@*var @-@*a 1@-@*244@-@*a@-@*a =1@-@*kag@-@*@@a@-@*slider@-@*sliderLayer@-@*mainwindow@-@*kag.mainwindow@-@*kag.MainWindow@-@*kag.top@-@*kag.left@-@*kag.width@-@*kag.height@-@*@-@*
+height=360
+exprhist=var a = 1@-@*a = 1@-@*var @-@*a 1@-@*244@-@*a@-@*a =1@-@*@@a@-@*slider@-@*sliderLayer@-@*mainwindow@-@*kag.left@-@*kag.width@-@*kag.height@-@*kag.fore@-@*kag.fore.messages[1]@-@*saveloadbuttons.height@-@*saveloadbuttons.width@-@*saveloadbuttons.visible@-@*saveloadbuttons.opactiy@-@*saveloadbuttons.opacity@-@*saveloadbuttons.saveloadbutton@-@*saveloadbuttons.saveloadbutton.height@-@*saveloadbuttons.bookmarkgra.width@-@*saveloadbuttons.window@-@*kag.fore.messages[1].window@-@*kag.mainwindow@-@*kag.MainWindow@-@*kag.historyLayer@-@*kag.historyLayer.parent@-@*kag.historyLayer.window@-@*kag.top@-@*kag@-@*saveloadbuttons.parejnt@-@*saveloadbuttons.parent@-@*kag.saveloadbuttons.count@-@*kag.saveloadbuttons[0]@-@*kag.saveloadbuttons[0].parent@-@*kag.saveloadbuttons[0].window@-@*kag.bookMarkDates@-@*kag.saveloadbuttons@-@*saveloadbuttons@-@*saveloadbuttons.archiveno@-@*kag.bookMarkDates[0]@-@*saveloadbuttons.bbookmarkgra@-@*saveloadbuttons.bookmarkgra@-@*saveloadbuttons.bookmarkgra.height@-@*saveloadbuttons.bookmarkgra.visible@-@*kag.booMarkNames[0]@-@*kag.bookMarkNames[0]@-@*Layer.face@-@*Layer.face.dfAlpha@-@*Layer.dfAlpha@-@*dfAddAlpha@-@*dfOpaque@-@*dfBoth@-@*saveloadbuttons.face@-@*dfALpha@-@*dfAlpha@-@*saveloadbuttons.font@-@*ËÎÌו@-@*saveloadbuttons.font.size@-@*saveloadbuttons.font.face@-@*@-@*
 stayontop=0
 font=pEpPpPpPaAaAaAaAaAaAaAaAaAaAaAaAjAaBaAaAaAaAaAiGaAaAaAaAmLmOmMoFaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaA
 

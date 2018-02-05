@@ -46,24 +46,6 @@ tf.needempty = false;
 @eval exp="tf.ibarray = []"
 @endmacro
 
-;Define interpolate function
-;because macros don't support loops...
-@iscript
-function ib(object,time,opacity,x,y){
-	tf.ibarray.insert(0,new ButtonInterpolate(object,time,opacity,x,y));
-	tf.ibarray[0].start();
-}
-
-function clib(){
-	dm(tf.ibarray.count);
-	for(var i = 0;i < tf.ibarray.count;i++){
-		if(tf.ibarray[i] != void){
-			tf.ibarray[i].interpT.enabled = false;
-		}
-	}
-	tf.ibarray.clear();
-}
-@endscript
 
 ;init message3
 @position layer = message3 page = fore visible = true opacity = 0 top = 372 left = 20 marginl=0 margint=0 marginr=0 marginb=0 height=35 width = 220
@@ -72,7 +54,7 @@ function clib(){
 @position layer = message4 page = fore visible = true opacity = 0 top = 0 left = 852 width = 108 height = 1000 marginl=0 margint=0 marginr=0 marginb=0
 
 ;change position of messsage1
-@layopt layer = message1 index = 100000000
+@layopt layer = message1 index = 200000000
 
 ;display logo
 @jump storage = "title.ks" target = *logo

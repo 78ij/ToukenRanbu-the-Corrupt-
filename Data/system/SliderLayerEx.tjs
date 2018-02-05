@@ -100,6 +100,7 @@ class SliderLayerEx extends Layer{
 			if(abs(deltay) >= yinter){
 				var n = int (abs(deltay) / yinter);
 				var errta = (abs(deltay) / yinter) - n;
+				errta = errta + 0.5;
 				dm(errta);
 				yorig = y;
 				if(deltay < 0){

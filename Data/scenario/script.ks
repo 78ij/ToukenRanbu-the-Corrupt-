@@ -14,21 +14,40 @@
 
 @position layer=message4 visible = true 
 @current layer=message4
-@locate x = 91 y = 72
+@locate x = 0 y = 0
 @button normal = "menu"
-@locate x=112 y = 37
+@locate x= 108 y = 28
 @button graphic="save"
+@locate x = 108 y = 77
+@button graphic="quicksave"
+@locate x= 108 y = 126
+@button graphic="load"
+@locate x= 108 y = 175
+@button graphic="quickload"
+@locate x= 108 y = 224
+@button graphic="returntop"
 @iscript
+for(var i = 1;i <= 5;i++){
+	fml(4,i).object.opacity = 0;
+}
 var isopen = false;
 fml(4,0).object.onClick = function(){
 	if(!isopen){
 		clib();
-		ib(kag.fore.messages[4],300,255,760,0);
+		ib(fml(4,1).object,200,255,0,28);
+		ib(fml(4,2).object,250,255,0,77);
+		ib(fml(4,3).object,300,255,0,126);
+		ib(fml(4,4).object,350,255,0,175);
+		ib(fml(4,5).object,400,255,0,224);
 		isopen = true;
 	}
 	else{
 		clib();
-		ib(kag.fore.messages[4],300,255,760,-72);
+		ib(fml(4,1).object,200,0,108,28);
+		ib(fml(4,2).object,250,0,108,77);
+		ib(fml(4,3).object,300,0,108,126);
+		ib(fml(4,4).object,350,0,108,175);
+		ib(fml(4,5).object,400,0,108,224);
 		isopen = false;
 	}
 };

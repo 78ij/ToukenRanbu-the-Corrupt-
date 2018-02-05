@@ -13,6 +13,7 @@ KAGLoadScript("moveBtn.tjs");
 KAGLoadScript("fadeBtn.tjs");
 KAGLoadScript("MoveMouseCursorPlugin.tjs"); 
 KAGLoadScript("interpolateBtn.tjs"); 
+KAGLoadScript("SaveLoadButtonLayer.tjs");
 tf.needempty = false;
 @endscript
 
@@ -45,6 +46,8 @@ tf.needempty = false;
 @eval exp="tf.ibarray = []"
 @endmacro
 
+;Define interpolate function
+;because macros don't support loops...
 @iscript
 function ib(object,time,opacity,x,y){
 	tf.ibarray.insert(0,new ButtonInterpolate(object,time,opacity,x,y));
@@ -60,14 +63,16 @@ function clib(){
 	}
 	tf.ibarray.clear();
 }
-
 @endscript
 
 ;init message3
 @position layer = message3 page = fore visible = true opacity = 0 top = 372 left = 20 marginl=0 margint=0 marginr=0 marginb=0 height=35 width = 220
 
 ;init message4
-@position layer = message4 page = fore visible = true opacity = 0 top = -72 left = 760 width = 200 height = 100 marginl=0 margint=0 marginr=0 marginb=0
+@position layer = message4 page = fore visible = true opacity = 0 top = 0 left = 852 width = 108 height = 1000 marginl=0 margint=0 marginr=0 marginb=0
+
+;change position of messsage1
+@layopt layer = message1 index = 100000000
 
 ;display logo
 @jump storage = "title.ks" target = *logo

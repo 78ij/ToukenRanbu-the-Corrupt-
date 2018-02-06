@@ -1,13 +1,14 @@
 ;Script file.
+
+*save
+@tempsave place = 120
+@jump storage = "save.ks" target = *save
 *start
-
-*eps|Day 1
-
+@eval exp="clib()"
 @clickskip enabled = true
-@rclick enabled = true
 @history output=true enabled=true
 @position layer=message1 visible=false
-
+@rclick enabled = false
 @bgimage storage="bgi01"
 @trans method = crossfade time = 1000
 @wt
@@ -17,7 +18,7 @@
 @locate x = 0 y = 0
 @button normal = "menu"
 @locate x= 108 y = 28
-@button graphic="save" storage = "save.ks" target= *save
+@button graphic="save"
 @locate x = 108 y = 77
 @button graphic="quicksave"
 @locate x= 108 y = 126
@@ -25,7 +26,7 @@
 @locate x= 108 y = 175
 @button graphic="quickload"
 @locate x= 108 y = 224
-@button graphic="returntop"
+@button graphic="returntop" storage = "title.ks" target=*title
 @iscript
 for(var i = 1;i <= 5;i++){
 	fml(4,i).object.opacity = 0;
@@ -51,9 +52,22 @@ fml(4,0).object.onClick = function(){
 		isopen = false;
 	}
 };
+fml(4,1).object.onClick= function(x,y){
+	var a = %[];
+	a.enabled = true;
+	a.call = true;
+	a.storage = "save.ks";
+	a.target = "*save";
+	if(kag.clickWaiting){
+		kag.setRightClickOptions(a);
+		kag.callRightClickSubRoutine();
+	}
+};
 @endscript
 @layopt layer=message0 opacity = 255
 @current layer=message0
+
+*eps|Day 1
 
 ;Script begin.
 @n

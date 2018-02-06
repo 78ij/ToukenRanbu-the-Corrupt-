@@ -27,6 +27,12 @@ class SaveLoadButtonLayer extends Layer{
 			parent.onClick();
 		};
 		bookmarkgra = new KAGLayer(kag,this);
+		bookmarkgra.onMouseEnter = function(){
+			parent.onMouseEnter();
+		};
+		bookmarkgra.onClick = function(x,y,button){
+			parent.onClick(x,y,button);
+		};
 		issaving = _issaving;
 		archiveno = _archiveno;
 		if(issaving)
@@ -47,10 +53,6 @@ class SaveLoadButtonLayer extends Layer{
 		this.setPos(left,top);
 		this.loadImages("savebut1");
 		this.setSizeToImageSize();
-		//deletebutton.setSizeToImageSize();
-		//deletebutton.width = 94;
-		//saveloadbutton.setSizeToImageSize();
-		//saveloadbutton.width = 94;
 		bookmarkgra.setSizeToImageSize();
 		this.visible = true;
 		saveloadbutton.visible = true;
@@ -87,7 +89,7 @@ class SaveLoadButtonLayer extends Layer{
 	
 	function deletear(){
 		if(kag.bookMarkDates[archiveno] != void)
-			askYesNo("ÊÇ·ñÉ¾³ý´æµµ£¿","È·ÈÏ",kag.eraseBookMark(archiveno));
+			askYesNo("ÊÇ·ñÉ¾³ý´æµµ£¿","È·ÈÏ",kag.eraseBookMark,void,archiveno);
 		show(archiveno,issaving,left,top);
 	}
 	

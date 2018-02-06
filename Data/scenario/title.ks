@@ -18,19 +18,20 @@
 @bgimage storage = "comp"
 @trans method = crossfade time = 1000
 @wt
-@wait time = 2000
-@bgimage storage = "black"
-@trans method = crossfade time = 1000
-@wt
+
 
 *title
+@iscript
+kag.historyLayer.clear();
+@endscript
 @stopbgm
 @cm
-
 @advl layer = message0 frame = "text" 
 @layopt layer = message0 opacity = 0
 @layopt layer = message3 opacity = 255
-
+@bgimage storage = "black"
+@trans method = crossfade time = 1000
+@wt
 
 @current layer = message1
 @menul layer=message1
@@ -59,5 +60,4 @@
 @s
 
 *start
-@eval exp="clib()"
 @jump storage = "script.ks" target = *start

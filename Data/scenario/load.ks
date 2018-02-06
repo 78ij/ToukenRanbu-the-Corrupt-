@@ -3,7 +3,7 @@
 *load
 @rclick enabled = false
 @locksnapshot
-@position layer=message1 visible = true opacity = 0 page = fore frame ="savebg"
+@position layer=message1 visible = true opacity = 0 page = fore frame ="loadbg"
 @current layer=message1
 @er
 @locate x = 900 y = 259
@@ -13,6 +13,7 @@
 @locate x = 826 y = 506
 @button normal = returnn over = returno on = returnc target = *savereturn
 @iscript
+tf.needtrans = false;
 tf.savepages = 0;
 var saveloadbuttons = [];
 var pagebuttons = [];
@@ -110,11 +111,10 @@ ib(kag.fore.messages[1],500,255,0,0);
 ib(kag.fore.messages[1],500,1,0,0);
 kag.fore.messages[1].clear();
 @endscript
-@wait time = 500
 @current layer=message0
 @if exp="tf.istitleload == true"
+@wait time = 500
 @menul layer=message1
-@layopt layer=message1 opacity =255
 @jump storage = "title.ks" target= *title
 @else
 @return

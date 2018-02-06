@@ -65,12 +65,22 @@ class SliderLayer extends KAGLayer
 		// onPaint イベント
 		// レイヤの内容を描画する
 		super.onPaint(...);
-
-        // よく使う値をローカル変数に用意する
         var imw = imageWidth, imh = imageHeight;
+		var tabw = Slider_tabWidth;
+        var tabx = (imw - tabw) / 2;
+        var htabw = tabw >> 1;
+        var pos_x = int(
+            (Slider_position-Slider_min) * (imw - tabw - 2)/(Slider_max - Slider_min)) +
+            htabw + 1;
+        var x_htabw = pos_x - htabw;
+        // よく使う値をローカル変数に用意する
+
         
         if (baseImage !== void) {
             copyRect(0, 0, baseImage, 0, 0, imw, imh);
+			var temp = window.temporaryLayer;
+			temp.loadImages("confsliderbgfill");
+			copyRect(0,0,temp,0,0,x_htabw + 5,imh);
         } else {
             // 下敷きを塗る
             fillRect(0, 0, imw, imh, 0);
@@ -106,8 +116,7 @@ class SliderLayer extends KAGLayer
             
             if (tabImage !== void) {
                 
-                var tabw = Slider_tabWidth;
-                var tabx = (imw - tabw) / 2;
+
 
                 if (Slider_dragging) {
                     // on
@@ -135,7 +144,6 @@ class SliderLayer extends KAGLayer
         } else {
 
             var tabw = Slider_tabWidth;
-            var htabw = tabw >> 1;
             
             // 中央のへこみ線
             //if (baseImage === void) {
@@ -146,10 +154,7 @@ class SliderLayer extends KAGLayer
             //}
             
             // タブ
-            var pos_x = int(
-                (Slider_position-Slider_min) * (imw - tabw - 2)/(Slider_max - Slider_min)) +
-                htabw + 1;
-            var x_htabw = pos_x - htabw;
+
             
             if (tabImage !== void) {
                 
@@ -242,8 +247,8 @@ class SliderLayer extends KAGLayer
 	function onMouseDown(x, y, button)
 	{
 		// マウスボタンが押された
-		focus();
-		super.onMouseDown(...);
+		//focus();
+		//super.onMouseDown(...);
 
         if (button == mbLeft) {
             if (vertical) {
@@ -314,6 +319,7 @@ class SliderLayer extends KAGLayer
                     (x - Slider_dragOriginX - (Slider_tabWidth >> 1)) * (Slider_max - Slider_min) /
                     (imageWidth - Slider_tabWidth - 2) + Slider_min);
             }
+			dm(position);
 		}
 	}
 
@@ -487,7 +493,7 @@ class SliderLayer extends KAGLayer
             tabImage = new global.Layer(window, parent);
         }
         tabImage.loadImages(storage, key);
-        tabImage.setSizeTOImageSize();
+        tabImage.setSizeToImageSize();
         Slider_tabWidth  = tabImage.imageWidth / 3;
         Slider_tabHeight = tabImage.imageHeight;
     }

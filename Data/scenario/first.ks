@@ -11,7 +11,6 @@
 @iscript
 KAGLoadScript("moveBtn.tjs");
 KAGLoadScript("fadeBtn.tjs");
-KAGLoadScript("MoveMouseCursorPlugin.tjs"); 
 KAGLoadScript("interpolateBtn.tjs"); 
 KAGLoadScript("SaveLoadButtonLayer.tjs");
 tf.needempty = false;

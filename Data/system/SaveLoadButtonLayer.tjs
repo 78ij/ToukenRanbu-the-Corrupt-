@@ -115,7 +115,12 @@ class SaveLoadButtonLayer extends Layer{
 	}
 	
 
-	
+	function finalize(){
+		invalidate saveloadbutton;
+		invalidate deletebutton;
+		invalidate bookmarkgra;
+		super.finalize(...);
+	}
 	
 	function onPaint(){
 		super.onPaint(...);

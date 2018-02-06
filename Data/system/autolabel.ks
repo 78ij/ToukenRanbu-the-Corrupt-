@@ -16,6 +16,12 @@
 @locate x= 108 y = 224
 @button graphic="returntop" storage = "title.ks" target=*title
 @iscript
+fml(4,2).object.onClick = function(x,y){	
+	askYesNo("要快速存档?？","??",kag.saveBookMark,void,119);
+};
+fml(4,4).object.onClick = function(x,y){	
+	askYesNo("要快速?档?？","??",kag.loadBookMark,void,119);
+};
 for(var i = 1;i <= 5;i++){
 	fml(4,i).object.opacity = 0;
 }

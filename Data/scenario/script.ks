@@ -63,6 +63,18 @@ fml(4,1).object.onClick= function(x,y){
 		kag.callRightClickSubRoutine();
 	}
 };
+fml(4,3).object.onClick= function(x,y){
+	tf.istitleload = false;
+	var a = %[];
+	a.enabled = true;
+	a.call = true;
+	a.storage = "load.ks";
+	a.target = "*load";
+	if(kag.clickWaiting){
+		kag.setRightClickOptions(a);
+		kag.callRightClickSubRoutine();
+	}
+};
 @endscript
 @layopt layer=message0 opacity = 255
 @current layer=message0

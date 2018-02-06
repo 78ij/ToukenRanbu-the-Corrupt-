@@ -123,8 +123,9 @@ function histvoice(storage)
 ;文字点击换行
 @macro name=lr
 @locate x = 890 y = 120
-@l
-@r
+;@l
+;@r
+@p
 @endmacro
 
 ;音乐播放/停止音乐播放

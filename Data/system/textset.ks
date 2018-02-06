@@ -3,7 +3,7 @@
 ;------------------------------------------------------------
 ;全屏幕透明文字框（菜单、特典等用）
 @macro name=menul
-[position layer=%layer|message page=fore visible=true opacity=255 top=0 height=540 left=0 width=960 marginl=0 margint=0 marginr=0 marginb=0 frame=%frame| ]
+[position layer=%layer|message page=fore visible=true opacity=0 top=0 height=540 left=0 width=960 marginl=0 margint=0 marginr=0 marginb=0 frame=%frame| ]
 @endmacro
 
 ;电子小说文字框

@@ -46,6 +46,9 @@ tf.needempty = false;
 @eval exp="tf.ibarray = []"
 @endmacro
 
+@macro name =ce
+
+@endmacro
 
 ;init message3
 @position layer = message3 page = fore visible = true opacity = 0 top = 372 left = 20 marginl=0 margint=0 marginr=0 marginb=0 height=35 width = 220

@@ -9,6 +9,12 @@
 
 ;Load plugins
 @iscript
+if(sf.bgvolume == void){
+	sf.bgvolume = 100;
+	dm("aaaa");
+}
+if(sf.sevolume == void)
+	sf.sevolume = 100;
 KAGLoadScript("moveBtn.tjs");
 KAGLoadScript("fadeBtn.tjs");
 KAGLoadScript("interpolateBtn.tjs"); 
@@ -57,6 +63,15 @@ tf.needempty = false;
 
 ;change position of messsage1
 @layopt layer = message1 index = 200000000
+
+;bgm se volume config
+@iscript
+var a = %[];
+a.volume = sf.bgvolume;
+kag.bgm.setOptions(a);
+a.volume = sf.sevolume;
+kag.se[0].setOptions(a);
+@endscript
 
 ;display logo
 @jump storage = "title.ks" target = *logo

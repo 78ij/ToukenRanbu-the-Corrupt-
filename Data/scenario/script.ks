@@ -26,6 +26,10 @@
 @locate x= 108 y = 175
 @button graphic="quickload"
 @locate x= 108 y = 224
+@button graphic="checka"
+@locate x=108 y =273
+@button graphic="setting"
+@locate x=108 y=322
 @button graphic="returntop" storage = "title.ks" target=*title
 @iscript
 fml(4,2).object.onClick = function(x,y){	
@@ -41,20 +45,24 @@ var isopen = false;
 fml(4,0).object.onClick = function(){
 	if(!isopen){
 		clib();
-		ib(fml(4,1).object,200,255,0,28);
-		ib(fml(4,2).object,250,255,0,77);
-		ib(fml(4,3).object,300,255,0,126);
-		ib(fml(4,4).object,350,255,0,175);
-		ib(fml(4,5).object,400,255,0,224);
+		ib(fml(4,1).object,100,255,0,28);
+		ib(fml(4,2).object,120,255,0,77);
+		ib(fml(4,3).object,140,255,0,126);
+		ib(fml(4,4).object,160,255,0,175);
+		ib(fml(4,5).object,180,255,0,224);
+		ib(fml(4,6).object,200,255,0,273);
+		ib(fml(4,7).object,220,255,0,322);
 		isopen = true;
 	}
 	else{
 		clib();
-		ib(fml(4,1).object,200,0,108,28);
-		ib(fml(4,2).object,250,0,108,77);
-		ib(fml(4,3).object,300,0,108,126);
-		ib(fml(4,4).object,350,0,108,175);
-		ib(fml(4,5).object,400,0,108,224);
+		ib(fml(4,1).object,100,0,108,28);
+		ib(fml(4,2).object,120,0,108,77);
+		ib(fml(4,3).object,140,0,108,126);
+		ib(fml(4,4).object,160,0,108,175);
+		ib(fml(4,5).object,180,0,108,224);
+		ib(fml(4,6).object,200,0,108,273);
+		ib(fml(4,7).object,220,0,108,322);
 		isopen = false;
 	}
 };
@@ -81,6 +89,30 @@ fml(4,3).object.onClick= function(x,y){
 		kag.callRightClickSubRoutine();
 	}
 };
+fml(4,5).object.onClick= function(x,y){
+	var a = %[];
+	a.enabled = true;
+	a.call = true;
+	a.storage = "checknum.ks";
+	a.target = "*checknum";
+	if(kag.clickWaiting){
+		kag.setRightClickOptions(a);
+		kag.callRightClickSubRoutine();
+	}
+};
+fml(4,6).object.onClick= function(x,y){
+	tf.istitleconfig = false;
+	var a = %[];
+	a.enabled = true;
+	a.call = true;
+	a.storage = "config.ks";
+	a.target = "*config";
+	if(kag.clickWaiting){
+		kag.setRightClickOptions(a);
+		kag.callRightClickSubRoutine();
+	}
+};
+
 @endscript
 @layopt layer=message0 opacity = 255
 @current layer=message0

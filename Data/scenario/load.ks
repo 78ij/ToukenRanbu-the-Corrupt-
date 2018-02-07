@@ -115,7 +115,7 @@ kag.fore.messages[1].clear();
 @if exp="tf.istitleload == true"
 @wait time = 500
 @menul layer=message1
-@jump storage = "title.ks" target= *title
+@jump storage = "title.ks" target= *title2
 @else
 @return
 @endlf

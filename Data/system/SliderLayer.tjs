@@ -11,6 +11,8 @@ class SliderLayer extends KAGLayer
     var baseImage;
     // •ø•÷ª≠œÒ
     var tabImage;
+	
+	var relatefunction;
 
     // øk•π•È•§•¿
     var vertical;
@@ -65,6 +67,8 @@ class SliderLayer extends KAGLayer
 		// onPaint •§•Ÿ•Û•»
 		// •Ï•§•‰§Œƒ⁄»›§Ú√Ëª≠§π§Î
 		super.onPaint(...);
+		if(relatefunction != void)
+			relatefunction();
         var imw = imageWidth, imh = imageHeight;
 		var tabw = Slider_tabWidth;
         var tabx = (imw - tabw) / 2;

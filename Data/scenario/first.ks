@@ -73,5 +73,8 @@ a.volume = sf.sevolume;
 kag.se[0].setOptions(a);
 @endscript
 
+;speed of displaying
+@delay speed = 30
+
 ;display logo
 @jump storage = "title.ks" target = *logo

@@ -11,7 +11,6 @@
 @initintb
 @layopt layer = message0 opacity = 0
 @rclick enabled = true
-@history output=false enabled=false
 @clickskip enabled = false
 @image storage = "black" layer = base page = fore
 @wait time = 500
@@ -24,6 +23,7 @@
 @eval exp="tf.istitleconfig = false"
 @stopbgm
 *title2
+@history output=false enabled=false
 @cm
 @iscript
 kag.fore.messages[1].clear();

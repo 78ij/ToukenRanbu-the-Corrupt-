@@ -44,14 +44,14 @@ ib(kag.fore.messages[1],500,255,0,0);
 @s
 *configreturn
 @iscript
-ib(kag.fore.messages[1],500,1,0,0);
+ib(kag.fore.messages[1],300,1,0,0);
 kag.fore.messages[1].clear();
-ib(bgmconf,500,1,333,210);
-ib(seconf,500,1,333,285);
+ib(bgmconf,300,1,333,210);
+ib(seconf,300,1,333,285);
 @endscript
 @current layer=message0
 @if exp="tf.istitleconfig == true"
-@wait time = 500
+@wait time = 300
 @menul layer=message1
 @jump storage = "title.ks" target= *title2
 @else

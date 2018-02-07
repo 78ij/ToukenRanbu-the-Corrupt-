@@ -6,7 +6,7 @@
 ;message2 : val used to display novel sceneario.
 ;message3 : used to display the characters' names.
 ;message4 : used to display menu in game.
-
+;message5 : used to display select buttons.
 ;Load plugins
 @iscript
 if(sf.bgvolume == void){
@@ -51,8 +51,12 @@ tf.needempty = false;
 @eval exp="tf.ibarray = []"
 @endmacro
 
-@macro name =ce
-
+@macro name = sele
+@current layer=message5
+@locate x=200 y=119
+@button normal=selectn over=selecto on=selectc storage = %storage1 target=%target1
+@ptext i = 0 y=1 text=%text1
+@current layer=message0
 @endmacro
 
 ;init message3
@@ -60,6 +64,9 @@ tf.needempty = false;
 
 ;init message4
 @position layer = message4 page = fore visible = true opacity = 0 top = 0 left = 852 width = 108 height = 1000 marginl=0 margint=0 marginr=0 marginb=0
+
+;init message5
+@position layer=message5 page=fore visible = true opacity = 0 top=0 left=0 width=960 height=540 marginl=0 margint = 0 marginr=0 marginb=0
 
 ;change position of messsage1
 @layopt layer = message1 index = 200000000

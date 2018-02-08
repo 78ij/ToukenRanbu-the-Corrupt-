@@ -57,9 +57,7 @@ class ButtonInterpolate{
 		
 	}
 	function action(){
-		if(obj === void){
-			dm("aaaaa");
-		}
+		if(obj != void){
 		x += dx;
 		y += dy;
 		var op = obj.opacity + deo;
@@ -88,6 +86,7 @@ class ButtonInterpolate{
 			if(dop == 1)
 				obj.visible = false;
 		}
+	}
 	}
 	
 	function finalize(){

@@ -7,6 +7,9 @@
 ;message3 : used to display the characters' names.
 ;message4 : used to display menu in game.
 
+*title
+@eval exp="isopen = false"
+@jump target=*title1
 *logo
 @initintb
 @layopt layer = message0 opacity = 0
@@ -18,13 +21,14 @@
 @trans method = crossfade time = 1000
 @wt
 @wait time = 500
-*title
+*title1
 @eval exp="tf.istitleload = false"
 @eval exp="tf.istitleconfig = false"
 @stopbgm
 *title2
-@history output=false enabled=false
+@cl1
 @cm
+@history output=false enabled=false
 @iscript
 kag.fore.messages[1].clear();
 @endscript

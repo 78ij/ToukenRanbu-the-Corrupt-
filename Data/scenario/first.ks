@@ -51,14 +51,43 @@ tf.needempty = false;
 @eval exp="tf.ibarray = []"
 @endmacro
 
-@macro name = sele
+@macro name = sele1
 @current layer=message5
 @locate x=200 y=119
-@button normal=selectn over=selecto on=selectc storage = %storage1 target=%target1
-@ptext i = 0 y=1 text=%text1
-@current layer=message0
+@button normal=selectn over=selecto on=selectc storage = %storage target=%target
+@ptext i = 0 text=%text
 @endmacro
 
+@macro name = sele2
+@current layer=message5
+@locate x=200 y=160
+@button normal=selectn over=selecto on=selectc storage = %storage target=%target
+@ptext i = 1 text=%text
+@endmacro
+
+@macro name = sele3
+@current layer=message5
+@locate x=200 y=201
+@button normal=selectn over=selecto on=selectc storage = %storage target=%target
+@ptext i = 2 text=%text
+@endmacro
+
+@macro name = sele4
+@current layer=message5
+@locate x=200 y=242
+@button normal=selectn over=selecto on=selectc storage = %storage target=%target
+@ptext i = 3 text=%text
+@endmacro
+@macro name=endsele
+@hr
+@current layer=message5
+@er
+@eval exp="kag.clickWaiting = false"
+@current layer=message0
+@er
+@current layer=message3
+@er
+@endmacro
 ;init message3
 @position layer = message3 page = fore visible = true opacity = 0 top = 372 left = 20 marginl=0 margint=0 marginr=0 marginb=0 height=35 width = 220
 
@@ -82,6 +111,14 @@ kag.se[0].setOptions(a);
 
 ;speed of displaying
 @delay speed = 30
+
+;init hidden value
+@if exp="f.whitehair == void"
+@eval exp="f.whitehair = 0"
+@endif
+@if exp="f.trans == void"
+@eval exp="f.trans = 0"
+@endif
 
 ;display logo
 @jump storage = "title.ks" target = *logo

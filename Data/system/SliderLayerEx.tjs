@@ -64,7 +64,8 @@ class SliderLayerEx extends Layer{
 		}
 	}
 	function updtabpos(){
-		var delta = this.height - tablayer.height;
+	if(tablayer != void){
+			var delta = this.height - tablayer.height;
 		var datadel = value - pagelines;
 		var total = max - pagelines;
 		dm(value);
@@ -72,6 +73,8 @@ class SliderLayerEx extends Layer{
 		var delta2 = (datadel / total) * delta;
 		if(tablayer != void)
 			tablayer.setPos(940,540 - tablayer.height - delta2);
+	}
+
 	}
 	
 	function onMouseDown(x,y,button){

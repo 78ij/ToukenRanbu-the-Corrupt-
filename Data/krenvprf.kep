@@ -5,11 +5,30 @@ stayontop=0
 
 [console]
 autoshowonerror=0
-left=463
-top=363
+left=217
+top=419
 width=720
-height=408
-exprhist=kag.rightClickEnabled@-@*fml(1,0)@-@*fml(1,1)@-@*fml(1,2)@-@*fml(1,3)@-@*fml(1,4)@-@*fml(1,0).visible@-@*kag.fore.messages[1]@-@*kag.fore.messages[4]@-@*kag.fore.messages[4].left@-@*kag.fore.messages[4].top@-@*kag.fore.messages[4].height@-@*kag.fore.messages[4].width@-@*kag.fore.messages[4].page@-@*fml(4,1)@-@*messag@-@*@@position layer=message4  opacity = 0@-@*fml(1,0).object@-@*fml(1,0).object.opacity@-@*fml(1,0).object.visible@-@*fml(1,0).object.parent@-@*fml(1,0).object.window@-@*kag.fore.messages[4].visible\@-@*kag.fore.messages[1].visible@-@*kag.fore.messages[1].opacity@-@*kag.fore.messages[4].opacity@-@*kag.fore.messages[4].visible@-@*fml(4,0)@-@*kag.fore.base@-@*MouseCursorMover.finalize@-@*MouseCursorMover@-@*MouseCursorMover.MouseCursorMover@-@*MouseCursorMover.MouseCursorMover()\@-@*MouseCursorMover.MouseCursorMover()@-@*new MouseCursorMover()@-@*new Layer()@-@*new MouseCursorMover(kag.fore.base)@-@*new Layer(kag,kag.fore.base)@-@*sf.bgmvolume@-@*sf.bsevolume@-@*sf.sevolume@-@*tf.istitleload@-@*tf.istitleconfig@-@*tf.bgvolume@-@*sf.bgvolume@-@*fml(4,5)@-@*fml(4,5).visible@-@*fml(4,5).object.visible@-@*fml(4,5).object.opacity@-@*fml(4,5).object.left@-@*fml(4,5).object.top@-@*kag.fore.messages[1].font.face@-@*tf.stl@-@*kag.fore.messages[5]@-@*kag.fore.messages[5].opacity@-@*kag.fore.messages[5].visible@-@*kag.fore.messages[5].absolute@-@*fml(5,0)@-@*fml(5,0).object@-@*fml(5,0).object.drawText@-@*elm.layer@-@*"1"@-@*int "1"@-@*@-@*
+height=378
+exprhist="1"@-@*int "1"@-@*kag.fore.messages[4].page@-@*kag.fore.messages[4].absolute@-@*kag.fore.messages[0].absolute@-@*fml(1,2)@-@*fml@-@*bml@-@*fml(4,1)@-@*fml(4,2)@-@*kag.back.messages[4]@-@*kag.back.messages[4].numLinks@-@*kag.back.messages[4].links[0]@-@*init@-@*init()@-@*initb()@-@*kag.back.messages[4].links[0].object\@-@*kag.back.messages[4].links[0].object@-@*kag.back.messages[4].links[4].object@-@*fml(4,0).onClick@-@*fml(4,0).onClick()@-@*kag.back.messages[4].links[0].object.onClick()@-@*kag.back.messages[4].links[4].object.left@-@*fml(4,0).object.left@-@*fml(4,1).object.visible.opacity@-@*fml(4,1).object.opacity@-@*fml(4,1).object.visible = true@-@*fml(4,1).object.opacity = 255@-@*fml(4,1).object.heidht@-@*fml(4,1).object.height@-@*bml(4,0).object@-@*bml(4,0).object.visible@-@*bml(4,0).object.opacity@-@*fml(4,0).visible@-@*fml(4,0).object.opacity@-@*fml(4,0).object.visible = true@-@*bml(4,0).object.visible = true@-@*bml(4,0).object.left@-@*bml(4,0).object.top@-@*bml(4,0).object.height@-@*fml(4,0).object.height@-@*bml(4,0).object.width@-@*fml(4,0).object.visible = 1@-@*kag.fore.messages[4]@-@*kag.fore.messages[4].width@-@*kag.fore.messages[4].height@-@*kag.back.messages[4].height@-@*kag.back.messages[4].widthj@-@*kag.back.messages[4].width@-@*fml(4,1).object.visible@-@*fml(4,0).object.wodtju@-@*fml(4,0).object.visib;e@-@*fml(4,1).object.left@-@*fml(4,0).object.width@-@*fml(4,1).object.width@-@*fml(4,0).object.visible@-@*fml(4,0).object.onClick@-@*fml(4,0).object.onClick()@-@*!isopen@-@*isopen@-@*fml(4,0)@-@*fml(4,4)@-@*fml(4,6)@-@*@-@*
 stayontop=0
 font=pEpPpPpPaAaAaAaAaAaAaAaAaAaAaAaAjAaBaAaAaAaAaAiGaAaAaAaAmLmOmMoFaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaA
+
+[script editor]
+left=78
+top=78
+width=538
+height=352
+content=
+stayontop=0
+
+[watch]
+left=104
+top=104
+width=299
+height=223
+col0width=140
+col1width=400
+stayontop=0
+exprlist=
+interval=1000
 
